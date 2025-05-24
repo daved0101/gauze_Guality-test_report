@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gauze Fabric Test Report Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>ADAMA DEVELOPMENT PLC - Nazmed Medical Textiles</h1>
+        <h2>GAUZE BANDAGE LAB TEST RESULTS REPORT FORM</h2>
+        <table class="header-table">
+            <tr>
+                <td><strong>Document No:</strong> ADPLC-OF-166</td>
+                <td><strong>Revision No:</strong> 00</td>
+                <td><strong>Page:</strong> 1 of 1</td>
+            </tr>
+        </table>
+
+        <h2>Test Report</h2>
+        <form id="testReportForm">
+            <div class="form-group">
+                <label>Sample Name:</label>
+                <input type="text" value="Gauze Fabric Bleached & Dried" readonly>
+            </div>
+            <div class="form-group">
+                <label>Batch Number:</label>
+                <input type="text" id="batchNumber" name="batchNumber" required>
+            </div>
+            <div class="form-group">
+                <label>Batch Size:</label>
+                <input type="number" value="105000" readonly>
+            </div>
+            <div class="form-group">
+                <label>Shift:</label>
+                <input type="text" id="shift" name="shift" required>
+            </div>
+            <div class="form-group">
+                <label>Test Method:</label>
+                <input type="text" value="ES 6734:2021, EN 14079" readonly>
+            </div>
+            <div class="form-group">
+                <label>Testing Date:</label>
+                <input type="date" id="testingDate" name="testingDate" required>
+            </div>
+
+            <h2>Test Results</h2>
+            <table class="test-results-table">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Unit</th>
+                        <th>Standard</th>
+                        <th>Results</th>
+                        <th>Conclusion</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Width</td>
+                        <td>Cm</td>
+                        <td>90±2</td>
+                        <td><input type="number" name="width" step="0.1" required></td>
+                        <td><input type="text" name="widthConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Fiber Identification</td>
+                        <td>%</td>
+                        <td>100% cotton</td>
+                        <td><input type="text" name="fiber" value="100% cotton" readonly></td>
+                        <td><input type="text" name="fiberConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Fluorescence</td>
+                        <td></td>
+                        <td>With the exception of that shown by a few isolated fibers no intense blue fluorescence shall be displayed</td>
+                        <td><input type="text" name="fluorescence"></td>
+                        <td><input type="text" name="fluorescenceConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Mass per square meter</td>
+                        <td>g/m2</td>
+                        <td>≥13</td>
+                        <td><input type="number" name="mass" step="0.1" required></td>
+                        <td><input type="text" name="massConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Thread Count</td>
+                        <td>Threads/cm2</td>
+                        <td>≥12</td>
+                        <td><input type="number" name="threadCount" step="1" required></td>
+                        <td><input type="text" name="threadCountConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Absorbency</td>
+                        <td>Second</td>
+                        <td>≤10</td>
+                        <td><input type="number" name="absorbency" step="0.1" required></td>
+                        <td><input type="text" name="absorbencyConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Whiteness</td>
+                        <td>oA</td>
+                        <td>≥72</td>
+                        <td><input type="number" name="whiteness" step="0.1" required></td>
+                        <td><input type="text" name="whitenessConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Water-soluble substances</td>
+                        <td>%</td>
+                        <td>≤0.50</td>
+                        <td><input type="number" name="waterSoluble" step="0.01" required></td>
+                        <td><input type="text" name="waterSolubleConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Sulphated Ash</td>
+                        <td>%</td>
+                        <td>≤0.75</td>
+                        <td><input type="number" name="sulphatedAsh" step="0.01" required></td>
+                        <td><input type="text" name="sulphatedAshConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Loss on drying</td>
+                        <td>%</td>
+                        <td>≤8</td>
+                        <td><input type="number" name="lossOnDrying" step="0.1" required></td>
+                        <td><input type="text" name="lossOnDryingConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Starch and Dextrin</td>
+                        <td></td>
+                        <td>No red, violet, or blue color develops</td>
+                        <td><input type="text" name="starch"></td>
+                        <td><input type="text" name="starchConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Extractable coloring matter</td>
+                        <td></td>
+                        <td>Liquid obtained shall not be more than blue colored solution</td>
+                        <td><input type="text" name="coloringMatter"></td>
+                        <td><input type="text" name="coloringMatterConclusion"></td>
+                    </tr>
+                    <tr>
+                        <td>Acidity and alkalinity</td>
+                        <td></td>
+                        <td>No pink color develops in either portion after addition of phenolphthalein and Methyl orange solution</td>
+                        <td><input type="text" name="acidity"></td>
+                        <td><input type="text" name="acidityConclusion"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="form-group">
+                <label>Conclusion Remark:</label>
+                <textarea id="conclusionRemark" name="conclusionRemark" rows="4"></textarea>
+            </div>
+
+            <div class="signature-section">
+                <div>
+                    <label>Prepared by:</label>
+                    <input type="text" id="preparedBy" name="preparedBy" required>
+                    <label>Signature:</label>
+                    <div class="signature-container">
+                        <canvas id="preparedCanvas" width="200" height="100"></canvas>
+                        <div class="signature-controls">
+                            <button type="button" onclick="clearCanvas('preparedCanvas')">Clear</button>
+                            <input type="file" accept="image/*" onchange="uploadSignature('preparedCanvas', this)">
+                        </div>
+                    </div>
+                    <label>Date:</label>
+                    <input type="date" name="preparedDate" required>
+                </div>
+                <div>
+                    <label>Checked by:</label>
+                    <input type="text" value="Amanuel Melese" readonly>
+                    <label>Signature:</label>
+                    <div class="signature-container">
+                        <canvas id="checkedCanvas" width="200" height="100"></canvas>
+                        <div class="signature-controls">
+                            <button type="button" onclick="clearCanvas('checkedCanvas')">Clear</button>
+                            <input type="file" accept="image/*" onchange="uploadSignature('checkedCanvas', this)">
+                        </div>
+                    </div>
+                    <label>Date:</label>
+                    <input type="date" name="checkedDate" required>
+                </div>
+                <div>
+                    <label>Approved by:</label>
+                    <input type="text" value="Tambizot Getachew" readonly>
+                    <label>Signature:</label>
+                    <div class="signature-container">
+                        <canvas id="approvedCanvas" width="200" height="100"></canvas>
+                        <div class="signature-controls">
+                            <button type="button" onclick="clearCanvas('approvedCanvas')">Clear</button>
+                            <input type="file" accept="image/*" onchange="uploadSignature('approvedCanvas', this)">
+                        </div>
+                    </div>
+                    <label>Date:</label>
+                    <input type="date" name="approvedDate" required>
+                </div>
+            </div>
+
+            <button type="submit">Submit Report</button>
+        </form>
+
+        <div class="export-section" id="exportSection">
+            <button class="export-button" onclick="exportPDF()">Export to PDF</button>
+            <button class="export-button" onclick="exportCSV()">Export to CSV</button>
+            <button class="export-button" onclick="exportJSON()">Export to JSON</button>
+        </div>
+
+        <div id="output"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
